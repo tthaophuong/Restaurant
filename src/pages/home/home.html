@@ -20,7 +20,7 @@
         <div class="reservations-title title text-center" padding> reservation</div>
         <div class="reservation-form">
           <div class="reservation ">
-            Date
+            {{date}}
             <ion-icon name="arrow-down"></ion-icon>
           </div>
           <div class="dropdown">
@@ -30,42 +30,55 @@
               </div>
             </div>
             <div class="day-in-month row">
-              <div class="day" (click)="changeNumber(number)" *ngFor="let number of months" [class.active]="number && number ==numberSelected">
-                <span *ngIf="number">{{number}}</span>
-                <div class="bg" *ngIf="number && number == numberSelected"></div>
+              <div tappable class="day" (click)="changeNumber(day)" *ngFor="let day of calendar.days" [class.active]="day && day.dayNumber ==numberSelected">
+                <span *ngIf="day">{{day.dayNumber}}</span>
+                <div class="bg" *ngIf="day && day.dayNumber == numberSelected"></div>
               </div>
             </div>
 
           </div>
 
         </div>
-        <div class="reservation ">
-          Time
-          <ion-icon name="arrow-down"></ion-icon>
-        </div>
+
         <div class="reservation-form">
-          <div class="reservation ">
-            Number people
+          <div class="reservation" *ngIf="!isShowInputTime">
+            {{time}}
             <ion-icon name="arrow-down"></ion-icon>
           </div>
           <div class="dropdown">
-            <div class="reservations ">
+            <div class="reservations" *ngFor="let time of times" (click)="seclecTime(time)" tappable>
+              {{time}}
+            </div>
+          </div>
+        </div>
+
+        <div class="reservation-form">
+          <div class="reservation" *ngIf="!isShowInput">
+            {{numberPeopleString}}
+            <ion-icon name="arrow-down"></ion-icon>
+          </div>
+
+          <div class="reservation" *ngIf="isShowInput">
+            <ion-input #input type="number" max="35" min="1" (blur)="onBlur($event)" (input)="inPut($event)" placeholder="Maximum 35 people"></ion-input>
+          </div>
+          <div class="dropdown">
+            <div class="reservations " (click)="seclecPeople(4)" tappable>
               2-4 people
             </div>
-            <div class="reservations ">
+            <div class="reservations " (click)="seclecPeople(8)" tappable>
               4-8 people
             </div>
-            <div class="reservations ">
+            <div class="reservations " (click)="seclecPeople(12)" tappable>
               8-12 people
             </div>
-            <div class="reservations ">
+            <div class="reservations " (click)="seclecPeople(0)" tappable>
               Other
             </div>
           </div>
         </div>
-        <div class="reservation book-btn text-center">
+        <button class="reservation book-btn text-center" [disabled]="!isFullOption">
           Book now
-        </div>
+        </button>
       </div>
 
 
@@ -88,7 +101,7 @@
         <a href="#" class="menu-dropdown">
           Home
           <div class="menu">
-            <a href="#" (click)="goToBar()">Bar</a>
+            <a href="#">Bar</a>
           </div>
         </a>
         <a href="#" (click)="goToMenu()">Menu</a>

@@ -35,12 +35,19 @@ page-home {
         font-size: 16px;
         margin-top: 15px;
     }
+    .text-input{
+        margin: 0;
+    }
     .reservation ion-icon {
         float: right;
     }
     .book-btn {
         background: #f5f1f1;
         color: black;
+        width: 100%;
+    }
+    .book-btn:hover{
+        box-shadow: 0 0 10px white;
     }
     .time-activity {
         margin-top: 20px;
@@ -99,7 +106,7 @@ page-home {
                 height: 30px;
                 width: 30px;
                 border-radius: 50%;
-                background: green;
+                background: rgb(143, 102, 27);
                 z-index: -1;
                 position: absolute;
                 left: 50%;
