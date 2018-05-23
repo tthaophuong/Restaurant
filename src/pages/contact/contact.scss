@@ -1,0 +1,45 @@
+page-contact {
+    .scroll-content {
+        padding: 0 !important;
+    }
+    .contact {
+        display: flex;
+    }
+    .phone-container {
+        padding: 14px;
+        border-right: 0.5px solid #f5f1f1;
+    }
+    .phone-container img {
+        max-width: 300px;
+        max-height: 200px;
+    }
+    .phone {
+        margin-top: 20px;
+    }
+    .phone ion-icon{
+        margin-right: 15px;
+    }
+    .messages {
+        padding: 14px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        margin: auto;
+        align-content: center;
+        text-align: center;
+    }
+    .messages ion-label {
+        text-transform: capitalize;
+    }
+    .messages button {
+        width: 130px;
+        background: rgb(143, 102, 27);
+        padding: 10px;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .item-inner{
+        border: none !important; 
+        box-shadow: none !important;
+    }
+}

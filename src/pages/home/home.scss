@@ -1,0 +1,156 @@
+page-home {
+    .text-intro {
+        width: 30%;
+        padding: 10px;
+        flex-flow: column;
+    }
+    .name-restaurant {
+        font-size: 40px;
+        font-family: Brush Script MT, Brush Script Std, cursive;
+        text-align: center;
+        padding: 34px 0px;
+    }
+    .border-end {
+        width: 60%;
+        border: 0.5px solid white;
+        margin-bottom: 20px;
+    }
+    .content-home {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 14px;
+    }
+    .title {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+    .reservations-container {
+        width: 80%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .reservation {
+        border: 1px solid white;
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+    .reservation ion-icon {
+        float: right;
+    }
+    .book-btn {
+        background: #f5f1f1;
+        color: black;
+    }
+    .time-activity {
+        margin-top: 20px;
+    }
+    .media-logo {
+        padding: 14px;
+    }
+    .media-logo ion-icon {
+        font-size: 22px;
+        margin-right: 10px;
+    }
+    .day-of-weeks {
+        display: flex;
+        width: 100%;
+        .day {
+            width: 14.2857143%;
+            text-align: center;
+        }
+    }
+    .reservations {
+        width: 300px;
+        padding: 12px;
+        font-size: 16px;
+    }
+    .reservations:hover {
+        background: rgb(56, 55, 55);
+    }
+    .reservation-form {
+        position: relative;
+    }
+    .dropdown {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: rgb(31, 30, 30);
+        z-index: 5;
+    }
+    .rreservation-form:hover {
+        background: rgb(37, 37, 37);
+    }
+    .reservation-form:hover .dropdown {
+        display: block;
+    }
+    .day-in-month {
+        .day {
+            width: 14.2857143%;
+            text-align: center;
+            padding: .6rem;
+            margin: .6rem 0;
+            position: relative;
+            &.active {
+                color: white;
+            }
+            .bg {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                background: green;
+                z-index: -1;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    .body-container {
+        position: relative;
+    }
+    .main-container {
+        margin-left: 1.6rem;
+    }
+    .menu-container {
+        border: 0.5px solid white;
+        padding: 14px;
+    }
+    .menu-container a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        margin-right: 25px;
+        padding: 14px;
+    }
+    .menu-container a:hover {
+        background: white;
+        color: black;
+        font-weight: bold;
+    }
+    .menu-dropdown {
+        position: relative;
+    }
+    .menu {
+        position: absolute;
+        display: none;
+        top: 100%;
+        left: 0;
+        min-height: 30px;
+        a{
+            // thêm thuộc tính display block vào cho cái này nếu k, khi cậu padding thì thằng cha k được tự mở rộng thêm height
+            display: block; 
+            margin: 0; //cáii order online ý t k biết vì sao lỗi, chỉnh hộ nốt đi :))
+        }
+        a:hover{
+            background: rgba($color: #000000, $alpha: .8);
+            color: white;
+        }
+    }
+   
+    .menu-dropdown:hover .menu {
+        display: block;
+    }
+}

@@ -1,0 +1,36 @@
+page-bar {
+  .title {
+    text-align: center;
+    padding: 14px;
+    margin: 20px 0px;
+  }
+  .title h3 {
+    font-size: 34px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+  }
+  .wine {
+    box-shadow: 3px 3px 6px white;
+    margin-right: 20px;
+  }
+  .wine-content {
+    position: relative;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: none;
+    padding: 14px;
+    color: red;
+    font-size: 22px;
+    width: calc(100% - 20px);
+    height: 50px;
+  }
+  .icon ion-icon{
+      width: 50px;
+  }
+  .wine-content:hover .icon {
+    display: block;
+    background: rgb(243, 241, 241);
+  }
+}

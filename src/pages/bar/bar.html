@@ -1,0 +1,48 @@
+<!--
+  Generated template for the BarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>bar</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content class="background-decorate" padding>
+  <div class="bar">
+    <ion-slides pager>
+      <ion-slide *ngFor="let slide of slides">
+        <img [src]="slide.image" class="slide-image" />
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+  <div class="title">
+    <h3>Restaurant Ng.</h3>
+    <p>Shop the world's largest wine store with thousands of domestic and imported wines delivered right to your choose!</p>
+  </div>
+  <div class="wine-container a3-container-center">
+    <div class="wine-content">
+      <div class="wine">
+        <img src="./assets/imgs/ruou-glenfiddich-18-nam.jpg" alt="">
+      </div>
+      <div class="icon">
+        <div class="icon1">
+          <ion-icon name="heart"></ion-icon>
+        </div>
+        <!-- <div class="icon2"><ion-icon name="redo"></ion-icon></div>          -->
+      </div>
+    </div>
+    <div class="wine">
+      <img src="./assets/imgs/ruou-glenfiddich-18-nam.jpg" alt="">
+    </div>
+    <div class="wine">
+      <img src="./assets/imgs/ruou-glenfiddich-18-nam.jpg" alt="">
+    </div>
+  </div>
+</ion-content>

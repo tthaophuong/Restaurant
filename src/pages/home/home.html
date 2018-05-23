@@ -1,0 +1,101 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content class="background-main" padding>
+  <ion-row class="body-container">
+    <ion-col col-3 class="text-intro background-decorate  a3-container-center">
+      <div class="name-restaurant">Restaurant Ng. </div>
+      <div class="border-end"></div>
+      <div class="content-home text-center">
+        <h3 class="title">Welcome</h3>
+        <p> I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me
+          to add your own content and make changes to the font.</p>
+      </div>
+      <div class="reservations-container ">
+        <div class="reservations-title title text-center" padding> reservation</div>
+        <div class="reservation-form">
+          <div class="reservation ">
+            Date
+            <ion-icon name="arrow-down"></ion-icon>
+          </div>
+          <div class="dropdown">
+            <div class="day-of-weeks" margin-top>
+              <div class="day" *ngFor="let day of dayofweeks">
+                {{day}}
+              </div>
+            </div>
+            <div class="day-in-month row">
+              <div class="day" (click)="changeNumber(number)" *ngFor="let number of months" [class.active]="number && number ==numberSelected">
+                <span *ngIf="number">{{number}}</span>
+                <div class="bg" *ngIf="number && number == numberSelected"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="reservation ">
+          Time
+          <ion-icon name="arrow-down"></ion-icon>
+        </div>
+        <div class="reservation-form">
+          <div class="reservation ">
+            Number people
+            <ion-icon name="arrow-down"></ion-icon>
+          </div>
+          <div class="dropdown">
+            <div class="reservations ">
+              2-4 people
+            </div>
+            <div class="reservations ">
+              4-8 people
+            </div>
+            <div class="reservations ">
+              8-12 people
+            </div>
+            <div class="reservations ">
+              Other
+            </div>
+          </div>
+        </div>
+        <div class="reservation book-btn text-center">
+          Book now
+        </div>
+      </div>
+
+
+      <div class="border-end"></div>
+      <div class="time-activity text-center">
+        Ng. Restaurant
+        <br/> Open everyday from 9am to 11pm
+
+        <div class="media-logo a3-container-center">
+          <ion-icon name="logo-facebook"></ion-icon>
+          <ion-icon name="logo-foursquare"></ion-icon>
+          <ion-icon name="logo-instagram"></ion-icon>
+          <ion-icon name="logo-twitter"></ion-icon>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col class="main-container ">
+      <div class="menu-container a3-container-center">
+
+        <a href="#" class="menu-dropdown">
+          Home
+          <div class="menu">
+            <a href="#" (click)="goToBar()">Bar</a>
+          </div>
+        </a>
+        <a href="#" (click)="goToMenu()">Menu</a>
+        <a href="#" (click)="goToOrder()">Order online</a>
+        <a href="#" (click)="goToTeam()">Team</a>
+        <a href="#" (click)="goToContact()">Contact</a>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

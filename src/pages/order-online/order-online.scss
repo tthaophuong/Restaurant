@@ -1,0 +1,76 @@
+page-order-online {
+  .menu-column {
+    border-right: 0.2px solid #f5f1f1;
+    padding: 14px;
+  }
+  .menu-column a {
+    text-decoration: none;
+    color: #f5f1f1;
+  }
+  .name-restaurant {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 8px;
+    border-bottom: 0.2px solid #f5f1f1;
+  }
+  .food-title {
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 14px;
+    text-align: center;
+  }
+  .food-title p {
+    font-size: 16px;
+  }
+  .food-container {
+    display: flex;
+    padding: 14px;
+    position: relative;
+    align-items: center;
+    margin-top: 15px;
+    border-bottom: 0.2px solid #f5f1f1;
+  }
+  .picture {
+    margin-right: 20px;
+  }
+  .picture img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  .name-component {
+    text-transform: capitalize;
+    font-weight: inherit;
+  }
+  .cost {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .my-order {
+    border-bottom: 0.2px solid #f5f1f1;
+    padding: 14px 0px;
+  }
+  .food-order {
+    height: 150px;
+    overflow: hidden;
+  }
+  .btn {
+    width: 130px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .btn button {
+    background: rgb(143, 102, 27);
+    padding: 10px;
+  }
+  .middle {
+    width: 60%;
+    margin: auto;
+    border: 1px solid #f5f1f1;
+  }
+}

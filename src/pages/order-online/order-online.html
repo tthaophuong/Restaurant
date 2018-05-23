@@ -1,0 +1,205 @@
+<!--
+  Generated template for the OrderOnlinePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>order-online</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content class="background-decorate" padding>
+  <ion-row>
+    <ion-col col-2 class="menu-column font-normal ">
+      <div class="name-restaurant">Restaurant Ng.</div>
+      <a href="#" (click)="addClassStart()" *ngIf="!isAddStart">Start </a>
+      <br/>
+      <a href="#" (click)="addClassMain()" *ngIf="!isAddMain">Main </a>
+      <br/>
+      <a href="#" (click)="addClassDessert()" *ngIf="!isAddDessert">Dessert </a>
+    </ion-col>
+    <ion-col class="food" *ngIf="!isAddMain" >
+      <div class="food-title">
+        Start
+        <br/>
+        <p>This is a section of your menu, customize it any way you want.</p>
+
+      </div>
+      <div class="food-container" (click)="foodDetail()">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+    </ion-col>
+
+    <ion-col class="food" *ngIf="isAddMain" >
+      <div class="food-title">
+        Main
+        <br/>
+        <p>This is a section of your menu, customize it any way you want.</p>
+
+      </div>
+      <div class="food-container" (click)="foodDetail()">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+    </ion-col>
+
+    <ion-col class="food" *ngIf="!isAddMain" >
+      <div class="food-title">
+        Dessert
+        <br/>
+        <p>This is a section of your menu, customize it any way you want.</p>
+
+      </div>
+      <div class="food-container" (click)="foodDetail()">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+      <div class="food-container">
+        <div class="picture">
+          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
+        <div class="name-component">
+          <h3>pizza</h3>
+          <P>mushrooms, corn, beef, onions, cheese</P>
+        </div>
+        <div class="cost">$40</div>
+      </div>
+    </ion-col>
+    <ion-col col-3 class="order ">
+      <div class="my-order">My order</div>
+      <div class="food-order"></div>
+      <div class="middle"></div>
+      <div class="my-order">Subtotal
+        <b>$0</b>
+      </div>
+      <div class="request">
+        <ion-item>
+          <ion-input type="text" placeholder="Special request"></ion-input>
+        </ion-item>
+      </div>
+      <div class="btn">
+        <button ion-button>Order Now</button>
+      </div>
+
+    </ion-col>
+  </ion-row>
+</ion-content>

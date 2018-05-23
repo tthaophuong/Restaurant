@@ -1,0 +1,49 @@
+page-food-detail {
+  .food-container {
+    display: flex;
+    padding: 14px;
+    position: relative;
+    align-items: center;
+    margin-top: 15px;
+    border-bottom: 0.2px solid #f5f1f1;
+  }
+  .picture img {
+    max-width: 450px;
+    max-height: 300px;
+  }
+  .name-component {
+    text-transform: capitalize;
+    font-weight: inherit;
+  }
+  .cost {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .number {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+  }
+  .btn {
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .btn ion-icon{
+      margin-right: 15px;
+  }
+  .btn button{
+    background: rgb(143, 102, 27);
+    padding: 14px;
+  }
+}
