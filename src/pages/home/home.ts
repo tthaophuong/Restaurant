@@ -11,6 +11,7 @@ import { Untils } from '../../providers/untils';
 export class HomePage {
   @ViewChild("input") myInput;
   @ViewChild("input2") myInput2;
+  @ViewChild("inputPhone") inputPhone;
   dayofweeks = ["Mon", "Tue", "Web", "Thu", "Fri", "Sat", "Sun"];
   months = [];
   numberSelected: number = 5;
@@ -153,4 +154,11 @@ export class HomePage {
     this.mAppController.showToast("Bạn đã đặt chỗ bàn thành công");
   }
 
+
+  inPhone($event){
+    let phoneNumber = this.inputPhone.value+"";
+    if(phoneNumber.length > 11){
+      this.inputPhone.value = phoneNumber.substr(0,11);
+    }
+  }
 }
