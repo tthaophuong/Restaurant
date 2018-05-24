@@ -149,4 +149,8 @@ export class HomePage {
     this.isFullOption = false;
   }
 
+  book(){
+    this.mAppController.showToast("Bạn đã đặt chỗ bàn thành công");
+  }
+
 }
