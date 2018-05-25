@@ -19,18 +19,18 @@
       <div class="reservations-container ">
         <div class="reservations-title title text-center" padding> reservation</div>
         <div class="reservation-form">
-          <div class="reservation ">
+          <div class="reservation " tappable (click)="showDetail()">
             {{date}}
-            <ion-icon name="arrow-down"></ion-icon>
+            <ion-icon name="arrow-down" [class.up]="isShowDate"></ion-icon>
           </div>
-          <div class="dropdown">
+          <div class="dropdown" [class.show]="isShowDate">
             <div class="day-of-weeks" margin-top>
               <div class="day" *ngFor="let day of dayofweeks">
                 {{day}}
               </div>
             </div>
             <div class="day-in-month row">
-              <div tappable class="day" (click)="changeNumber(day)" *ngFor="let day of calendar.days" [class.active]="day && day.dayNumber ==numberSelected">
+              <div tappable class="day" (click)="changeNumber(day)" *ngFor="let day of calendar.days" [class.active]="day && day.dayNumber >= today.getDate() && calendar.month == today.getMonth()+ 1">
                 <span *ngIf="day">{{day.dayNumber}}</span>
                 <div class="bg" *ngIf="day && day.dayNumber == numberSelected"></div>
               </div>
@@ -41,11 +41,11 @@
         </div>
 
         <div class="reservation-form">
-          <div class="reservation" *ngIf="!isShowInputTime">
+          <div class="reservation" tappable (click)="showTime()">
             {{time}}
-            <ion-icon name="arrow-down"></ion-icon>
+            <ion-icon name="arrow-down" [class.up]="isShowTime"></ion-icon>
           </div>
-          <div class="dropdown">
+          <div class="dropdown" [class.show]="isShowTime">
             <div class="reservations" *ngFor="let time of times" (click)="seclecTime(time)" tappable>
               {{time}}
             </div>
@@ -53,15 +53,15 @@
         </div>
 
         <div class="reservation-form">
-          <div class="reservation" *ngIf="!isShowInput">
+          <div class="reservation" *ngIf="!isShowInput" tappable (click)="showPeople()">
             {{numberPeopleString}}
-            <ion-icon name="arrow-down"></ion-icon>
+            <ion-icon name="arrow-down" [class.up]="isShowPeople"></ion-icon>
           </div>
 
           <div class="reservation" *ngIf="isShowInput">
             <ion-input #input type="number" max="35" min="1" (blur)="onBlur($event)" (input)="inPut($event)" placeholder="Maximum 35 people"></ion-input>
           </div>
-          <div class="dropdown">
+          <div class="dropdown" [class.show]="isShowPeople">
             <div class="reservations " (click)="seclecPeople(4)" tappable>
               2-4 people
             </div>

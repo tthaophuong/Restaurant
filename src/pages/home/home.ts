@@ -12,7 +12,7 @@ export class HomePage {
   @ViewChild("input") myInput;
   @ViewChild("input2") myInput2;
   @ViewChild("inputPhone") inputPhone;
-  dayofweeks = ["Mon", "Tue", "Web", "Thu", "Fri", "Sat", "Sun"];
+  dayofweeks = ["M", "T", "W", "T", "F", "S", "S"];
   months = [];
   numberSelected: number = 5;
   calendar: Calendar;
@@ -33,6 +33,7 @@ export class HomePage {
   }
   isShowInput: boolean = false;
   seclecPeople(number) {
+    this.isShowPeople = false;
     if (number == 0) {
       this.isShowInput = true;
       setTimeout(() => {
@@ -89,6 +90,7 @@ export class HomePage {
   }
 
   changeNumber(day: Day) {
+    this.isShowDate = false;
     if (day != null && day.dayNumber >= this.today.getDate()) {
       this.numberSelected = day.dayNumber;
       this.date = Untils.convertDateString(this.calendar.year, this.calendar.month, this.numberSelected);
@@ -138,12 +140,13 @@ export class HomePage {
 
   time: string = "Time";
   seclecTime(time) {
+    this.isShowTime = false;
     this.time = time;
     this.checkFullOption();
   }
 
   checkFullOption() {
-    if (this.time != "Time" && this.numberPeopleString != "Number people") {
+    if (this.time != "Time" && this.numberPeopleString != "Number people" ) {
       this.isFullOption = true;
       return;
     }
@@ -152,6 +155,7 @@ export class HomePage {
 
   book(){
     this.mAppController.showToast("Bạn đã đặt chỗ bàn thành công");
+    this.resetAll();
   }
 
 
@@ -160,5 +164,36 @@ export class HomePage {
     if(phoneNumber.length > 11){
       this.inputPhone.value = phoneNumber.substr(0,11);
     }
+  }
+
+  isShowDate: boolean = false;
+  showDetail(){
+    this.isShowDate = !this.isShowDate;
+    this.isShowTime = false;
+    this.isShowPeople = false;
+  }
+  isShowTime: boolean = false;
+  showTime(){
+    this.isShowTime = !this.isShowTime;
+    this.isShowDate = false;
+    this.isShowPeople = false;
+    if(this.times.length == 0 && this.isShowTime){
+      this.isShowTime = false;
+      this.mAppController.showToast("Chúng tôi chỉ nhận đặt chỗ từ 9h00-21h00");
+    }
+  }
+  isShowPeople
+  showPeople(){
+    this.isShowPeople = !this.isShowPeople;
+    this.isShowDate = false;
+    this.isShowTime = false;
+  }
+
+  resetAll(){
+    this.time = "Time";
+    this.numberPeopleString = "Number people";
+    this.inputPhone.value = "";
+    let today = new Date();
+    this.date = Untils.convertDateString(this.calendar.year, this.calendar.month, today.getDate());
   }
 }
