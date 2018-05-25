@@ -39,15 +39,15 @@
       </h3>
       <br/>
       <ion-item>
-        <ion-input type="text" placeholder="Your name"></ion-input>
+        <ion-input type="text" placeholder="Your name" [(ngModel)]="name"></ion-input>
       </ion-item>
       <br/>
       <ion-item>
-        <ion-input type="text" placeholder="Your email address"></ion-input>
+        <ion-input type="text" placeholder="Your email address" [(ngModel)]="address"></ion-input>
       </ion-item>
       <br/>
       <ion-item>
-        <ion-input type="text" placeholder="Your message"></ion-input>
+        <ion-input type="text" placeholder="Your message" [(ngModel)]="message"></ion-input>
       </ion-item>
       <button ion-button inline (click)="sendMessage()">Send messages</button>
     </div>

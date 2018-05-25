@@ -36,10 +36,25 @@
     text-align: center;
 }
 .modal-wrapper{
-    width: 60%;
-    left: 33.3%;
+    width: 70%;
+    left: 28%;
     top: 20%;
     
+}
+.a3-container{
+    display: flex;
+}
+.a3-items-center{
+    align-items: center;
+}
+.float-right{
+    float: right;
+}
+.width-70{
+    width: 70%;
+}
+.justify-between{
+    justify-content: space-between;
 }
 
 

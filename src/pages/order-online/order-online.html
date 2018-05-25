@@ -11,195 +11,155 @@
   </ion-navbar>
 
 </ion-header> -->
-
-
-<ion-content class="background-decorate" padding>
-  <ion-row>
-    <ion-col col-2 class="menu-column font-normal ">
-      <div class="name-restaurant">Restaurant Ng.</div>
-      <a href="#" (click)="addClassStart()" *ngIf="!isAddStart">Start </a>
-      <br/>
-      <a href="#" (click)="addClassMain()" *ngIf="!isAddMain">Main </a>
-      <br/>
-      <a href="#" (click)="addClassDessert()" *ngIf="!isAddDessert">Dessert </a>
-    </ion-col>
-    <ion-col class="food" *ngIf="!isAddMain" >
-      <div class="food-title">
-        Start
-        <br/>
-        <p>This is a section of your menu, customize it any way you want.</p>
-
+<div class="popup-container" id="detail">
+  <div class="food-container">
+    <div class="close-btn" tappable (click)="hideDetail()">
+      <ion-icon name="close"></ion-icon>
+    </div>
+    <div class="img" [ngStyle]="{'background-image': 'url( '+foodSelected.src+')'}"></div>
+    <div padding>
+      <div class="name">
+        <span>{{foodSelected.name}}</span>
       </div>
-      <div class="food-container" (click)="foodDetail()">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
+      <div class="money">
+        <span>{{foodSelected.price}}$</span>
+      </div>
+      <div class="sub-content">
+        <span>{{foodSelected.subcontent}}</span>
+      </div>
+      <div class="special-request">
+        <div class="title">
+          <span>Special requests?</span>
         </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
+        <div class="sub">
+          <ion-icon name="add"></ion-icon>
+          <span>Add them here. We'll do our best to make it happen</span>
         </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-    </ion-col>
-
-    <ion-col class="food" *ngIf="isAddMain" >
-      <div class="food-title">
-        Main
-        <br/>
-        <p>This is a section of your menu, customize it any way you want.</p>
-
-      </div>
-      <div class="food-container" (click)="foodDetail()">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-    </ion-col>
-
-    <ion-col class="food" *ngIf="!isAddMain" >
-      <div class="food-title">
-        Dessert
-        <br/>
-        <p>This is a section of your menu, customize it any way you want.</p>
-
-      </div>
-      <div class="food-container" (click)="foodDetail()">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-      <div class="food-container">
-        <div class="picture">
-          <img src="./assets/imgs/restaurant-gallery-4.jpg" /> </div>
-        <div class="name-component">
-          <h3>pizza</h3>
-          <P>mushrooms, corn, beef, onions, cheese</P>
-        </div>
-        <div class="cost">$40</div>
-      </div>
-    </ion-col>
-    <ion-col col-3 class="order ">
-      <div class="my-order">My order</div>
-      <div class="food-order"></div>
-      <div class="middle"></div>
-      <div class="my-order">Subtotal
-        <b>$0</b>
-      </div>
-      <div class="request">
-        <ion-item>
-          <ion-input type="text" placeholder="Special request"></ion-input>
-        </ion-item>
-      </div>
-      <div class="btn">
-        <button ion-button>Order Now</button>
+        <ion-input type="text" [(ngModel)]="foodSelected.special_request"></ion-input>
       </div>
 
-    </ion-col>
-  </ion-row>
+      <div class="quantity-container a3-container items-center justify-between">
+        <div class="width-70">
+          <span>Quantiy</span>
+        </div>
+        <div class="icon a3-container-center">
+          <ion-icon name="remove" (click)="removeQuantity()"></ion-icon>
+          <span class="number">{{foodSelected.quantity}}</span>
+          <ion-icon name="add" (click)="addQuantiy()"></ion-icon>
+        </div>
+      </div>
+
+      <div class="btn-add-order">
+        <button ion-button icon-start (click)="addFoodToOrder()" [disabled]="foodSelected.quantity < 1">
+          <ion-icon name="add"></ion-icon>
+          add to my order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ion-content class="background-decorate">
+
+  <div class="a3-container container">
+
+    <div class="menu-btn" tappable (click)="showMenu()">
+      <ion-icon name="menu"></ion-icon>
+    </div>
+
+    <div class="menu-container" id="menu">
+      <div class="menu" (click)="closeMenu()">
+        <span>Lunch Menu</span>
+        <ion-icon name="arrow-back"></ion-icon>
+      </div>
+
+      <div class="dropbox" id="drop">
+        <div class="menu-item" [class.selected]="index == 0" (click)="changeIndex(0)">
+          <span>Starters</span>
+        </div>
+        <div class="menu-item" [class.selected]="index == 1" (click)="changeIndex(1)">
+          <span>Mains</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu-content-container">
+      <div class="header" text-center>
+        <div class="lunch-menu">Lunch Menu</div>
+        <div class="subtitle">
+          <span>Served daily between 12-5pm</span>
+        </div>
+      </div>
+
+      <div class="sub-header">
+        <div class="title">
+          <span>{{menuSelected.menuSelected}}</span>
+        </div>
+        <div class="subMenu">
+          <span>{{menuSelected.subMenu}}</span>
+        </div>
+      </div>
+
+      <div class="list-food-container">
+        <div class="food" *ngFor="let item of items" (click)="selectedFood(item)">
+          <ion-row>
+            <ion-col col-3>
+              <img src="{{item.src}}" alt="">
+            </ion-col>
+            <ion-col>
+              <div class="name-food">
+                <span>{{item.name}}</span>
+                <span class="money">{{item.money}}$</span>
+              </div>
+              <div class="sub-content">
+                <span>{{item.subcontent}}</span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-container">
+      <div class="order">
+        <span>My Order</span>
+        <span class="float-right">({{order.getTotalItems()}} items)</span>
+      </div>
+      <div class="item-container">
+        <div class="item  a3-container" *ngFor="let food of order.listFoods">
+          <div class="name">
+            <span>{{food.quantity}} x {{food.name}}</span>
+          </div>
+          <div class="money">
+            <span>{{food.getTotalMoney()}}$</span>
+          </div>
+
+          <div class="btn-container">
+            <div class="minus">
+              <ion-icon name="remove" *ngIf="food.quantity > 1" (click)="removeQuantityFood(food)"></ion-icon>
+              <ion-icon name="close" *ngIf="food.quantity == 1" (click)="deleteFood(food)"></ion-icon>
+            </div>
+            <div class="add">
+              <ion-icon name="add" (click)="addQuantityFood(food)"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subtotal">
+        <span>Subtotal</span>
+        <span class="float-right">{{order.getTotalMoney()}}$</span>
+      </div>
+
+      <div class="special">
+        <ion-icon name="add"></ion-icon>
+        <span>Special request</span>
+      </div>
+
+      <div class="btn-order">
+        <button ion-button icon-end [disabled]="order.listFoods.length == 0" (click)="orderNow()">Order now 
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
 </ion-content>

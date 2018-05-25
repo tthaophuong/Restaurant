@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AppControllerProvider } from '../../providers/app-controller/app-controller';
 
 /**
  * Generated class for the ContactPage page.
@@ -14,8 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'contact.html',
 })
 export class ContactPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  message: string = "";
+  address: string = "";
+  name: string = "";
+  constructor(
+    public mAppController : AppControllerProvider,
+    public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -23,6 +28,9 @@ export class ContactPage {
   }
 
   sendMessage(){
-    alert("Chung toi da nhan duoc tin nhan cua ban. Xin cam on");
+    this.mAppController.showToast("Chúng tôi đã nhận được phản hồi của bạn. Xin cám ơn !",2000,"top");
+    this.message = "";
+    this.address = "";
+    this.name= "";
   }
 }

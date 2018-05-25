@@ -79,7 +79,7 @@
 
         <div class="reservation-form">
           <div class="reservation" >
-            <ion-input #inputPhone type="number" max="99999999999" min="0" (input)="inPhone($event)" placeholder="Số điện thoại"></ion-input>
+            <ion-input #inputPhone type="number" max="99999999999" min="0" (input)="inPhone($event)" placeholder="Phone Number"></ion-input>
           </div>
         </div>
         <button class="reservation book-btn text-center" [disabled]="!isFullOption" (click)="book()">

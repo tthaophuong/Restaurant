@@ -15,7 +15,9 @@ import { AppControllerProvider } from '../providers/app-controller/app-controlle
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      iconMode: 'ios'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -29,4 +29,57 @@ export class AppControllerProvider {
       position : position ? position : "bottom"
     }).present();
   }
+
+  getStarterData(){
+    return [
+      {
+        id: "#1",
+        src: "./assets/imgs/food1.jpg",
+        name: "This Is Your Item's Name",
+        subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
+        money: 23
+      },
+      {
+        id: "#2",
+        src: "./assets/imgs/food1.jpg",
+        name: "This Is Your Item's Name",
+        subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
+        money: 10
+      },
+      {
+        id: "#3",
+        src: "./assets/imgs/food1.jpg",
+        name: "This Is Your Item's Name",
+        subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
+        money: 5
+      }
+    ]
+  }
+  getMainData(){
+    return [
+      {
+        id: "#4",
+        src: "./assets/imgs/food2.webp",
+        name: "This Is Your Item's Name",
+        subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
+        money: 23
+      },
+      {
+        id: "#5",
+        src: "./assets/imgs/food2.webp",
+        name: "This Is Your Item's Name",
+        subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
+        money: 10
+      },
+      {
+        id: "#6",
+        src: "./assets/imgs/food2.webp",
+        name: "This Is Your Item's Name",
+        subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
+        money: 5
+      }
+    ]
+  }
+
+
 }

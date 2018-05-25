@@ -1,76 +1,291 @@
 page-order-online {
-  .menu-column {
-    border-right: 0.2px solid #f5f1f1;
-    padding: 14px;
+  .popup-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: .4);
+    z-index: 10;
+    overflow: scroll;
+    padding: 2rem;
+    display: none;
+    .food-container {
+      background: #2d2d2d;
+      max-width: 50%;
+      margin: auto;
+      color: white;
+      line-height: 1.6em;
+      position: relative;
+      .close-btn{
+        position: absolute;
+        top: -1rem;
+        right: -2rem;
+        background: white;
+        color: black;
+        border-radius: 50%;
+        padding: .5rem 1.2rem;
+      }
+      .img {
+        height: 300px;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .name {
+        font-size: 1.6em;
+        text-transform: capitalize;
+      }
+      .money {
+        font-size: 1.2em;
+        margin: 1.2rem 0;
+      }
+      .special-request {
+        margin: 1.2rem 0;
+        .title {
+          font-size: 1.2em;
+        }
+        .sub {
+          font-size: 1.1em;
+          color: #ababab;
+          margin: 1rem 0;
+        }
+        ion-input {
+          border: 1px solid white;
+        }
+      }
+      .quantity-container {
+        margin: 1.2rem 0;
+        .icon {
+          .number {
+            margin: 0 2rem;
+          }
+          ion-icon {
+            cursor: pointer;
+            border: 1px solid white;
+            padding: .3rem .6rem;
+            border-radius: 50%;
+          }
+        }
+      }
+      .btn-add-order {
+        margin: 1.2rem 0;
+        .button {
+          width: 100%;
+          min-height: 4em;
+          background: white;
+          color: black;
+          text-transform: uppercase;
+          height: unset;
+        }
+      }
+    }
   }
-  .menu-column a {
-    text-decoration: none;
-    color: #f5f1f1;
-  }
-  .name-restaurant {
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    font-size: 20px;
-    margin-bottom: 20px;
-    padding: 8px;
-    border-bottom: 0.2px solid #f5f1f1;
-  }
-  .food-title {
-    font-size: 24px;
-    text-transform: uppercase;
-    padding: 14px;
-    text-align: center;
-  }
-  .food-title p {
-    font-size: 16px;
-  }
-  .food-container {
-    display: flex;
-    padding: 14px;
+  .container {
+    min-height: 100%;
+    width: 100%;
     position: relative;
-    align-items: center;
-    margin-top: 15px;
-    border-bottom: 0.2px solid #f5f1f1;
-  }
-  .picture {
-    margin-right: 20px;
-  }
-  .picture img {
-    max-width: 100px;
-    max-height: 100px;
-  }
-  .name-component {
-    text-transform: capitalize;
-    font-weight: inherit;
-  }
-  .cost {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-right: 20px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .my-order {
-    border-bottom: 0.2px solid #f5f1f1;
-    padding: 14px 0px;
-  }
-  .food-order {
-    height: 150px;
-    overflow: hidden;
-  }
-  .btn {
-    width: 130px;
-    margin: auto;
-    margin-top: 20px;
-  }
-  .btn button {
-    background: rgb(143, 102, 27);
-    padding: 10px;
-  }
-  .middle {
-    width: 60%;
-    margin: auto;
-    border: 1px solid #f5f1f1;
+    z-index: 1;
+    .menu-btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1.2rem;
+      font-size: 1.8em;
+    }
+    .order-container {
+      width: 30%;
+      border-left: 1px solid gray;
+      padding: 1.2rem 0;
+      .order {
+        padding: 1.2rem 2.4rem;
+        width: 100%;
+        border-bottom: 1px solid gray;
+      }
+      .item-container {
+        height: 160px;
+        width: calc(100% - 32px);
+        margin: auto;
+        overflow: scroll;
+        border-bottom: 2px solid white;
+        .item {
+          position: relative;
+          padding: 1.2rem 1rem;
+          justify-content: space-between;
+          .name {
+            width: 80%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .money {
+            text-align: right;
+          }
+          .btn-container {
+            position: absolute;
+            text-align: center;
+            height: 100%;
+            background: #1e1e1e;
+            color: white;
+            right: 0;
+            top: 0;
+            transition: 200ms;
+           
+            width: 0;
+           
+          }
+        }
+        .item:hover {
+          .btn-container {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            ion-icon{
+              border : 1px solid white;
+              border-radius: 50%;
+              padding: .1rem .4rem;
+              margin: 0 .4rem;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .subtotal {
+        padding: 1.6rem 2.4rem;
+        width: 100%;
+        border-bottom: 1px solid gray;
+      }
+      .special {
+        padding: 1.6rem 1rem;
+        width: calc(100% - 32px);
+        margin: auto;
+        border-bottom: 1px solid gray;
+        cursor: pointer;
+        ion-icon {}
+      }
+      .btn-order {
+        width: calc(100% - 32px);
+        margin: auto;
+        margin-top: 4vh;
+        .button {
+          width: 100%;
+          background: white;
+          color: #2d2d2d;
+          text-transform: uppercase;
+          min-height: 4em;
+          ion-icon {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+    .menu-container {
+      width: 20%;
+      padding-top: 1rem;
+      border-right: 1px solid gray;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      z-index: 10;
+      background: #1e1e1e;
+      transition: 400ms;
+      transform: translateX(-120%); // overflow: hidden;
+      .menu {
+        border-bottom: 1px solid gray;
+        width: 100%;
+        padding: 1rem;
+        transition: 200ms;
+        ion-icon {
+          float: right;
+          &.up {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      .dropbox {
+        display: block;
+      }
+      .menu-item {
+        text-transform: uppercase;
+        padding: 1rem;
+        color: gray;
+        cursor: pointer;
+        border-left: 4px solid #1e1e1e;
+        &.selected {
+          border-color: white;
+          color: white;
+          background: #2d2d2d;
+        }
+      }
+    }
+    .menu-content-container {
+      width: 70%;
+      padding: 1.6rem;
+      .header {
+        line-height: 2em;
+        margin: auto;
+        margin-top: 3vh;
+        border-bottom: 1px solid gray;
+        padding-bottom: 1em;
+        max-width: 50%;
+        .lunch-menu {
+          font-size: 1.8em;
+          text-transform: capitalize;
+        }
+        .subtitle {
+          color: #ababab;
+          font-size: 1.2rem;
+        }
+      }
+      .sub-header {
+        text-align: center;
+        margin: auto;
+        margin-top: 3vh;
+        max-width: 80%;
+        .title {
+          text-transform: uppercase;
+          font-size: 2em;
+        }
+        .subMenu {
+          font-size: 1.4rem;
+          margin-top: 1em;
+          color: #ababab;
+        }
+      }
+      .list-food-container {
+        margin-top: 3vh;
+        .food {
+          padding: 1.2rem;
+          position: relative;
+          transition: 200ms;
+          max-height: 160px;
+          overflow: hidden;
+          cursor: pointer;
+          img {}
+          .name-food {
+            font-size: 1.8rem;
+            padding: 1rem 0 0 1rem;
+            color: white;
+            white-space: nowrap;
+            overflow: hidden;
+            .money {
+              float: right;
+            }
+          }
+          .sub-content {
+            font-size: 1.6rem;
+            margin-top: 1rem;
+            padding-left: 1rem;
+            color: #ababab;
+          }
+        }
+        .food:hover {
+          background: #2d2d2d;
+        }
+      }
+    }
   }
 }
