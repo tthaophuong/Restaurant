@@ -58,6 +58,17 @@ export class Foods {
     this.special_request = "";
   }
 
+  parse(food: Foods): Foods{
+    let newFood = new Foods();
+    newFood.id = food.id;
+    newFood.name = food.name;
+    newFood.quantity = food.quantity;
+    newFood.price = food.price;
+    newFood.src = food.src;
+    newFood.subcontent = food.subcontent;
+    newFood.special_request = food.special_request;
+    return newFood;
+  }
   getTotalMoney(): number {
     return this.price * this.quantity;
   }
@@ -206,14 +217,18 @@ export class OrderOnlinePage {
   }
 
   addFoodToOrder(){
+    console.log(this.order);
+    
     let index = this.order.listFoods.findIndex(food=>{
       return food.id == this.foodSelected.id;
     })
     if(index > -1){
       this.order.listFoods[index]= this.foodSelected;
     }else{
-      this.order.listFoods.push(this.foodSelected);
+      this.order.listFoods.push(this.foodSelected.parse(this.foodSelected));
     }
+    console.log(this.order);
+    
     this.hideDetail();
   }
 
