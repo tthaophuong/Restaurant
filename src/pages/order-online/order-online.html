@@ -31,11 +31,11 @@
         <div class="title">
           <span>Special requests?</span>
         </div>
-        <div class="sub">
+        <div class="sub" *ngIf="!isShowInputSpecial" (click)="showInputSpecial()" tappable>
           <ion-icon name="add"></ion-icon>
           <span>Add them here. We'll do our best to make it happen</span>
         </div>
-        <ion-input type="text" [(ngModel)]="foodSelected.special_request"></ion-input>
+        <ion-input *ngIf="isShowInputSpecial" type="text" [(ngModel)]="foodSelected.special_request"></ion-input>
       </div>
 
       <div class="quantity-container a3-container items-center justify-between">
@@ -127,12 +127,12 @@
       <div class="item-container">
         <div class="item  a3-container" *ngFor="let food of order.listFoods">
           <div class="name">
-            <span>{{food.quantity}} x {{food.name}}</span>
+            <span>{{food.quantity}} x {{food.name}}</span><br>
+            <span>{{food.special_request}}</span>
           </div>
           <div class="money">
             <span>{{food.getTotalMoney()}}$</span>
           </div>
-
           <div class="btn-container">
             <div class="minus">
               <ion-icon name="remove" *ngIf="food.quantity > 1" (click)="removeQuantityFood(food)"></ion-icon>
@@ -150,10 +150,12 @@
         <span class="float-right">{{order.getTotalMoney()}}$</span>
       </div>
 
-      <div class="special">
+      <div class="special" *ngIf="!isShowOrderSpecialInput" (click)="showOrderSpecial()" tappable>
         <ion-icon name="add"></ion-icon>
         <span>Special request</span>
       </div>
+      <ion-input #inPutOrderSpecial *ngIf="isShowOrderSpecialInput" (blur)="speialBlur()" type="text" placeholder="Special requests" [(ngModel)]="order.special_request"></ion-input>
+
 
       <div class="btn-order">
         <button ion-button icon-end [disabled]="order.listFoods.length == 0" (click)="orderNow()">Order now 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AppControllerProvider } from '../../providers/app-controller/app-controller';
 
@@ -89,6 +89,7 @@ export class Foods {
   templateUrl: 'order-online.html',
 })
 export class OrderOnlinePage {
+  @ViewChild("inPutOrderSpecial") inPutOrderSpecial;
   isAddStart: boolean = false;
   isAddMain: boolean = false;
   isAddDessert: boolean = false;
@@ -194,8 +195,12 @@ export class OrderOnlinePage {
     })
     if(index > -1){
       this.foodSelected.setQuanity(this.order.listFoods[index].quantity);
+      if(this.order.listFoods[index].special_request && this.order.listFoods[index].special_request.length > 0){
+        this.foodSelected.special_request = this.order.listFoods[index].special_request;
+      }
     }else{
       this.foodSelected.setQuanity(0);
+      this.isShowInputSpecial = false;
     }
     this.showDetail();
   }
@@ -229,6 +234,23 @@ export class OrderOnlinePage {
     })
     if(index > -1){
       this.order.listFoods.splice(index,1);
+    }
+  }
+  isShowInputSpecial: boolean = false;
+  showInputSpecial(){
+    this.isShowInputSpecial = true;
+  }
+  isShowOrderSpecialInput: boolean = false;
+  showOrderSpecial(){
+    this.isShowOrderSpecialInput = true;
+    setTimeout(() => {
+      this.inPutOrderSpecial.setFocus();
+    }, 150);
+  }
+
+  speialBlur(){
+    if(!this.order.special_request || this.order.special_request.length == 0){
+      this.isShowOrderSpecialInput = false;
     }
   }
 }

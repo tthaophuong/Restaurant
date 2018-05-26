@@ -52,7 +52,10 @@ page-order-online {
           margin: 1rem 0;
         }
         ion-input {
-          border: 1px solid white;
+          border: 1px solid #1e1e1e;
+          margin: 1.2rem 0;
+          background-color: white;
+          color: black;
         }
       }
       .quantity-container {
@@ -164,6 +167,11 @@ page-order-online {
         border-bottom: 1px solid gray;
         cursor: pointer;
         ion-icon {}
+      }
+      ion-input{
+        border: 1px solid white;
+        width: calc(100% - 32px);
+        margin: 1.2rem auto;
       }
       .btn-order {
         width: calc(100% - 32px);
