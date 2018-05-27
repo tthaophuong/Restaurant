@@ -32,6 +32,12 @@ export class HomePage {
     this.date = Untils.convertDateString(this.calendar.year, this.calendar.month, this.numberSelected);
   }
   isShowInput: boolean = false;
+  /**Chọn số lượng người
+   * - Ẩn dropdown
+   * - Nếu chọn other thì hiển thị ô nhập và focus vào ô input đó
+   * - Nếu chọn số người thiết lập sẵn thì hiển thị số người tương ứng
+   * - Kiểm tra xem đã đủ thông tin cần thiết để order hay chưa
+   */
   seclecPeople(number) {
     this.isShowPeople = false;
     if (number == 0) {
@@ -45,11 +51,14 @@ export class HomePage {
       this.checkFullOption();
     }
   }
+  /**Sau khi thoát khỏi trạng thái nhập input
+   * - Hiển thị số người đã chọn
+   * - Kiểm tra xem đã đủ thông tin cần thiết để order hay chưa
+   */
   onBlur($event) {
     this.isShowInput = false;
     this.numberPeopleString = this.number_people + " people";
     this.checkFullOption();
-    
   }
 
   ionViewDidLoad() {
@@ -57,6 +66,11 @@ export class HomePage {
     this._createTimeListToDay();
   }
 
+
+  /**Tạo giá trị trong dropdown thời gian
+   * ngày hôm nay
+   * - Nếu giờ hiện tại lớn hơn 9h thì khởi tạo từ giá trị giờ hiện tại
+   */
   _createTimeListToDay() {
     let min = 9;
     let max = 21;
@@ -67,6 +81,9 @@ export class HomePage {
     this.creatTimeList(min, max, now);
   }
 
+  /**Bắt sự kiên khi nhập số lượng người
+   * - Giá trị trên ô input max là 35 và độ dài chuỗi hiển thị tối đa là 2 nhập quá thi cắt chuỗi từ vị trí 0 đến vị trí thứ 2 trong chuỗi
+   */
   inPut($event) {
 
     let number_string = this.myInput.value;
@@ -89,6 +106,10 @@ export class HomePage {
     }
   }
 
+  /**Chọn ngày trong danh sách ngày
+   * Nếu ngày là ngày hiện tại chạy khởi taọ giá trị theo thời gian hiện tại
+   * Nếu là ngày hôm sau thì khởi tạo mặc định từ 9-21h
+   */
   changeNumber(day: Day) {
     this.isShowDate = false;
     if (day != null && day.dayNumber >= this.today.getDate()) {
@@ -155,13 +176,15 @@ export class HomePage {
     }
     this.isFullOption = false;
   }
-
+  /**Sau khi đầy đủ giá trị cần thiết lập button sẽ được sáng lên
+   * Click -> Hiển thị thông báo đặt bàn thành công và reset toàn bộ option đã lựa chọn
+   */
   book(){
     this.mAppController.showToast("Bạn đã đặt chỗ bàn thành công");
     this.resetAll();
   }
 
-
+  /**Bắt sự kiện khi nhập số điện thoại */
   inPhone($event){
     let phoneNumber = this.inputPhone.value+"";
     if(phoneNumber.length > 11){
@@ -170,12 +193,14 @@ export class HomePage {
   }
 
   isShowDate: boolean = false;
+  /**Hiển thị dropdown ngày tháng */
   showDetail(){
     this.isShowDate = !this.isShowDate;
     this.isShowTime = false;
     this.isShowPeople = false;
   }
   isShowTime: boolean = false;
+  /**Hiển thị dropdown chọn giờ */
   showTime(){
     this.isShowTime = !this.isShowTime;
     this.isShowDate = false;
@@ -186,12 +211,13 @@ export class HomePage {
     }
   }
   isShowPeople
+  /**Hiển thị dropdown chọn số lượng người */
   showPeople(){
     this.isShowPeople = !this.isShowPeople;
     this.isShowDate = false;
     this.isShowTime = false;
-  }
-
+  } 
+  /**Reset toàn bộ option đã lựa chọn về mặc định */
   resetAll(){
     this.time = "Time";
     this.numberPeopleString = "Number people";

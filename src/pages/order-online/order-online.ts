@@ -136,17 +136,8 @@ export class OrderOnlinePage {
   ionViewDidLoad() {
     this.items = this.mAppController.getStarterData();
   }
-  foodDetail() {
-    let modal = this.mModalController.create("FoodDetailPage");
-    modal.present();
-  }
-  // addClassStart() {
-  //   this.isAddStart = !this.isAddStart;
-  // }
-  addClassMain() {
-    this.isAddMain = !this.isAddMain;
-  }
 
+  /**Chọn starters hoặc mains trong menu */
   changeIndex(number) {
     this.index = number;
     this.menuSelected = this.menu[this.index];
@@ -158,6 +149,7 @@ export class OrderOnlinePage {
     }
   }
 
+  /**Hiển thị menu bằng cách dịch chuyển nó từ trái sang phải về vị trí chính xác ban đầu của nó*/
   showMenu() {
     let ele = document.getElementById("menu");
     if (ele) {
@@ -165,6 +157,7 @@ export class OrderOnlinePage {
     }
   }
 
+  /**Ẩn menu bằng cách dịch chuyển nó từ phải sang trái 1 khoảng cách bằng 120% chiều rộng của nó */
   closeMenu() {
     let ele = document.getElementById("menu");
     if (ele) {
@@ -172,6 +165,7 @@ export class OrderOnlinePage {
     }
   }
 
+  /** Hiển thị popup Chi tiết món ăn */
   showDetail() {
     let ele = document.getElementById("detail");
     if (ele) {
@@ -179,6 +173,8 @@ export class OrderOnlinePage {
     }
   }
 
+  /** Ẩn popup Chi tiết món ăn */
+  
   hideDetail() {
     let ele = document.getElementById("detail");
     if (ele) {
@@ -186,16 +182,23 @@ export class OrderOnlinePage {
     }
   }
 
+  /**Tăng số lượng của món ăn đang chọn lên 1 */
   addQuantiy() {
     this.foodSelected.quantity++;
   }
 
+  /**Giảm số lượng của món ăn đang chọn lên 1 */
   removeQuantity() {
     if (this.foodSelected.quantity > 0) {
       this.foodSelected.quantity--;
     }
   }
 
+  /**Sau khi click vào 1 món ăn
+   * - set up dữ liệu món cho món ăn đang được chọn để hiển thị lên popup
+   * - Nếu món đó đã có trong order thì set số lượng và special request đúng với trong order, nếu chưa xuất hiện trong order thì để về 0
+   * - Sau khi parse giá trị cho object xong thì hiển thị popup lên màn hình
+   */
   selectedFood(item){
     this.foodSelected.setName(item.name);
     this.foodSelected.setPrice(item.money);
@@ -217,8 +220,13 @@ export class OrderOnlinePage {
     this.showDetail();
   }
 
+
+  /** Thêm món đã chọn vào order
+   * - Nếu món ăn được chọn đã có trong order(Kết quả tìm index của nó trong danh sách món đã chọn trong order sẽ trả về giá trị lớn hơn -1) 
+   *   gán gía trị của object đang chọn cho phần tử ở vị trí index đã tìm được
+   * - Nếu món ăn chưa có trong order(index = -1) Copy gía trị object hiện tại đang chọn và tạo ra 1 object (Foods) mới rồi add vào danh sách món trong order
+   */
   addFoodToOrder(){
-    console.log(this.order);
     
     let index = this.order.listFoods.findIndex(food=>{
       return food.id == this.foodSelected.id;
@@ -228,22 +236,26 @@ export class OrderOnlinePage {
     }else{
       this.order.listFoods.push(this.foodSelected.parse(this.foodSelected));
     }
-    console.log(this.order);
     
     this.hideDetail();
   }
 
+  /**Hiển thị thông báo đã order thành công */
   orderNow(){
     this.mAppController.showToast("Bạn đã order thành công");
   }
+
+  /**Giảm số lượng ón ăn đang hover đi 1 */
   removeQuantityFood(food: Foods){
     if(food.quantity > 0)food.quantity--;
   }
 
+  /**Tăng số lượng ón ăn đang hover đi 1 */
   addQuantityFood(food){
     food.quantity++;
   }
 
+  /**Xóa món ăn đang hover đi nếu số lượng của nó bằng 1*/
   deleteFood(food: Foods){
     let index = this.order.listFoods.findIndex(foodd=>{
       return food.id == foodd.id;
@@ -252,11 +264,14 @@ export class OrderOnlinePage {
       this.order.listFoods.splice(index,1);
     }
   }
+
   isShowInputSpecial: boolean = false;
+  /**Hiển thị ô input nhập special request trong popup detail food*/
   showInputSpecial(){
     this.isShowInputSpecial = true;
   }
   isShowOrderSpecialInput: boolean = false;
+  /**Hiển thị ô input nhập special request bên cột order bên phải*/
   showOrderSpecial(){
     this.isShowOrderSpecialInput = true;
     setTimeout(() => {
@@ -264,6 +279,9 @@ export class OrderOnlinePage {
     }, 150);
   }
 
+  /** Sau khi không focus vào ô nhập special-request của cột order
+   * - Nếu không nhập giá trị nào vào ô input thì ẩn ô nhập đi
+   */
   speialBlur(){
     if(!this.order.special_request || this.order.special_request.length == 0){
       this.isShowOrderSpecialInput = false;
