@@ -73,7 +73,7 @@ export class AppControllerProvider {
       },
       {
         id: "#6",
-        src: "./assets/imgs/restaurant-gallery-4.jpg",
+        src: "./assets/imgs/66bc23fff16c4862903104a6597141fd.webp",
         name: "Whole fish Paratha",
         subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
         money: 5

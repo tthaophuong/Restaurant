@@ -156,8 +156,8 @@
       </div>
       <ion-input #inPutOrderSpecial *ngIf="isShowOrderSpecialInput" (blur)="speialBlur()" type="text" placeholder="Special requests" [(ngModel)]="order.special_request"></ion-input>
 
-      <ion-input #inPutOrderSpecial  (blur)="speialBlur()" type="number" placeholder="Your phone" [(ngModel)]="order.special_request"></ion-input>
-      <ion-input #inPutOrderSpecial  (blur)="speialBlur()" type="text" placeholder="Your address" ></ion-input>
+      <ion-input  type="number" placeholder="Your phone" ></ion-input>
+      <ion-input  type="text" placeholder="Your address" ></ion-input>
 
       <div class="btn-order">
         <button ion-button icon-end [disabled]="order.listFoods.length == 0" (click)="orderNow()">Order now 
