@@ -12,6 +12,9 @@ page-bar {
     box-shadow: 3px 3px 6px white;
     margin-right: 20px;
   }
+  .wine-container{
+    overflow: hidden;
+  }
   .wine-content {
     position: relative;
   }
@@ -21,14 +24,18 @@ page-bar {
     bottom: 0;
     display: none;
     padding: 14px;
-    color: red;
-    font-size: 22px;
+    color: black;
+    font-size: 16px;
     width: calc(100% - 20px);
     height: 50px;
+    opacity: 0.5;
   }
   .icon ion-icon{
       width: 50px;
   }
+  .icon b{
+    margin-left: 30px;
+}
   .wine-content:hover .icon {
     display: block;
     background: rgb(243, 241, 241);

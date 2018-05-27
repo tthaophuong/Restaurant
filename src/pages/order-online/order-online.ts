@@ -130,6 +130,7 @@ export class OrderOnlinePage {
       }
     ];
     this.menuSelected = this.menu[this.index];
+    
   }
 
   ionViewDidLoad() {

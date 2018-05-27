@@ -34,24 +34,24 @@ export class AppControllerProvider {
     return [
       {
         id: "#1",
-        src: "./assets/imgs/food1.jpg",
-        name: "This Is Your Item's Name",
+        src: "./assets/imgs/RFO-BeetrootChickpeaBites-1400x919-v2-754111cd-54eb-4e65-8712-0adc3594f53a-0-1400x919.jpg",
+        name: "Spring-roll",
         subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
         money: 23
       },
-      {
+      { 
         id: "#2",
-        src: "./assets/imgs/food1.jpg",
-        name: "This Is Your Item's Name",
+        src: "./assets/imgs/c700x420.jpg",
+        name: "Pizza",
         subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
-        money: 10
+        money: 15
       },
       {
         id: "#3",
-        src: "./assets/imgs/food1.jpg",
-        name: "This Is Your Item's Name",
+        src: "./assets/imgs/photos-2013-12-16-8-23-14.jpg",
+        name: "Seekh Kabab",
         subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
-        money: 5
+        money: 10
       }
     ]
   }
@@ -60,21 +60,21 @@ export class AppControllerProvider {
       {
         id: "#4",
         src: "./assets/imgs/food2.webp",
-        name: "This Is Your Item's Name",
+        name: "Shrimp Fingers",
         subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
         money: 23
       },
       {
         id: "#5",
-        src: "./assets/imgs/food2.webp",
-        name: "This Is Your Item's Name",
+        src: "./assets/imgs/556e81a361e36091e8a3edb8fff598c5.webp",
+        name: "Shrimp Fillet",
         subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
         money: 10
       },
       {
         id: "#6",
-        src: "./assets/imgs/food2.webp",
-        name: "This Is Your Item's Name",
+        src: "./assets/imgs/restaurant-gallery-4.jpg",
+        name: "Whole fish Paratha",
         subcontent: "Penne aglio e olio, with fresh garlic, herbs & cheese, topped with basil",
         money: 5
       }

@@ -13,8 +13,8 @@
       <div class="border-end"></div>
       <div class="content-home text-center">
         <h3 class="title">Welcome</h3>
-        <p> I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me
-          to add your own content and make changes to the font.</p>
+        <p> Craving a restaurant-level meal but not the wait, the check, or the babysitter? Why not channel your inner
+          chef and make a five-star meal in the comfort of our own kitchen? The <b>NG. Restaurant</b> is waiting and welcoming you... </p>
       </div>
       <div class="reservations-container ">
         <div class="reservations-title title text-center" padding> reservation</div>
@@ -78,7 +78,7 @@
         </div>
 
         <div class="reservation-form">
-          <div class="reservation" >
+          <div class="reservation">
             <ion-input #inputPhone type="number" max="99999999999" min="0" (input)="inPhone($event)" placeholder="Phone Number"></ion-input>
           </div>
         </div>
@@ -107,7 +107,7 @@
         <a href="#" class="menu-dropdown">
           Home
           <div class="menu">
-            <a href="#">Bar</a>
+            <a href="#" (click)="goToBar()">Bar</a>
           </div>
         </a>
         <a href="#" (click)="goToMenu()">Menu</a>

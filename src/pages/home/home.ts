@@ -117,7 +117,10 @@ export class HomePage {
     let modal = this.mModalController.create("ContactPage");
     modal.present();
   }
-
+  goToBar(){
+    let modal = this.mModalController.create("BarPage");
+    modal.present();
+  }
   creatTimeList(min, max, now?: Date) {
     this.times = [];
     for (let i = min; i <= max; i++) {
